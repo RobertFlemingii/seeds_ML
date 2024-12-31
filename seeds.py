@@ -91,8 +91,8 @@ plt.scatter(transformed_x[:,0], transformed_x[:,1])
 plt.show()
 
 # Create DataFrames for K-Means cluster labels and truth classes
-kmeans_pca_df = pd.DataFrame(np.hstack((transformed_x, kmeans.labels_.reshape(-1, 1))), columns=["pcal", "pca2", "class"])
-truth_pca_df = pd.DataFrame(np.hstack((transformed_x, df["class"].values.reshape(-1, 1))), columns=["pcal", "pca2", "class"])
+kmeans_pca_df = pd.DataFrame(np.hstack((transformed_x, kmeans.labels_.reshape(-1, 1))), columns=["pca1", "pca2", "class"])
+truth_pca_df = pd.DataFrame(np.hstack((transformed_x, df["class"].values.reshape(-1, 1))), columns=["pca1", "pca2", "class"])
 
 # Visualize the data with K-Means cluster labels in PCA space
 sns.scatterplot(x='pca1', y='pca2', hue='class', data=kmeans_pca_df)
